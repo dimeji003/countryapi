@@ -11,12 +11,17 @@ export default function Navbar() {
     setShowNav(!showNav)
   }
   return (
-    <nav>
+    <nav className='md:bg-black text-white flex flex-row md:justify-normal justify-between items-center  h-12 '>
+      <div className='md:hidden pl-3 flex flex-row items-center'><h2 className='text-black text-2xl'>Locate.</h2></div>
 
-      <RxHamburgerMenu className={`${showNav ? "hidden" : 'block md:hidden'} m-auto cursor-pointer`} onClick={onclick}/>
-      <MdCancel className={`${showNav ? 'block md:hidden' : 'hidden'} m-auto cursor-pointer md:hidden`}/>
 
-        <ul className={`md:flex md:flex-row md:h-20 h-[60vh] items-center flex-col justify-around ${showNav ? 'hidden' : 'flex'}`}>
+
+      <div className='pr-5 md:pr-0 md:w-[100%]'>
+      <RxHamburgerMenu className={`${showNav ? "hidden" : 'block md:hidden'} m-auto cursor-pointer text-2xl text-red-600`} onClick={onclick}/>
+
+ 
+        <ul className={`md:flex md:flex-row bg-black md:bg-none fixed md:relative top-0 right-0 md:h-[100%] h-[100vh] md:w-[100%] w-[60%] items-center flex-col md:justify-between justify-around ${showNav ? 'flex' : 'hidden'}`}>
+            <li><MdCancel className={`md:hidden block m-auto cursor-pointer`} onClick={onclick} /></li>
             <Link href='/'>
             <li className='px-9'>All</li>
             </Link>
@@ -32,6 +37,10 @@ export default function Navbar() {
             <li className='px-9'>Oceania</li>
             <li className='px-9'>Australia</li>
         </ul>
+
+      </div>
+      
+
     
     </nav>
   )

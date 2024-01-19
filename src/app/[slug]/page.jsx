@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 
 async function countries (){
@@ -14,6 +15,12 @@ async function countries (){
 
 
   return (
-    <div>{countryDetail.name.common}</div>
+    <div>
+      <h2>{countryDetail.name.common}</h2>
+      <Image src= {countryDetail.flags.svg} width={100} height={100} />
+
+      
+
+      </div>
   )
 }
