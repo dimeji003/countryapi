@@ -19,10 +19,10 @@ export default async function Home() {
       <Link href={country.name.common.split(' ').join('-')}>
       <Image src= {country.flags.svg} width={100} height={100} />
       </Link>
-      <h2>{country.name.common}</h2>
+      <h2 className='pt-3 text-xl text-center font-bold'>{country.name.common}</h2>
       <p>{country.continents}</p>
       <Link href={country.maps.googleMaps} target='_blank'>
-      <p>Check maps</p>
+      <p className='text-blue-700'>Check maps</p>
       </Link>
     </section>
 
