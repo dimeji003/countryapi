@@ -1,8 +1,7 @@
-
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { countriesData } from '../page'
+
 
 
 async function countries (){
@@ -16,8 +15,8 @@ export default async function page() {
   const data = await countries()
 // const countryData = countriesData
 
-const europe = data.filter(country => country.continents == 'Europe')
-const europeCard = europe.map(country => (
+const southamerica = data.filter(country => country.continents == 'South America')
+const southamericaCard = southamerica.map(country => (
   <section key={country.ccn3}>
     <Link href={country.name.common.split(' ').join('-')} className='flex flex-col items-center'>
         <Image src={country.flags.svg} width={100} height={100} />
@@ -33,6 +32,6 @@ const europeCard = europe.map(country => (
 
   
   return (
-    <div className='grid md:grid-cols-3 grid-cols-2 gap-5 w-[90%] py-11 m-auto'>{europeCard}</div>
+    <div className='grid md:grid-cols-3 grid-cols-2 gap-5 w-[90%] py-11 m-auto'>{southamericaCard}</div>
   )
 }

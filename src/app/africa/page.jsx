@@ -16,9 +16,13 @@ async function countries (){
   const africa = data.filter(country => country.continents == 'Africa')
   const africaCard = africa.map(country => (
     <section key={country.ccn3}>
-      <Link href={country.name.common.split(' ').join('-')}>
+      <Link href={country.name.common.split(' ').join('-')} className="flex flex-col items-center">
           <Image src={country.flags.svg} width={100} height={100} />
-          <h2>{country.name.common}</h2>
+          <h2 className="text-center">{country.name.common}</h2>
+          <p className='text-center'>{country.continents}</p>
+      </Link>
+      <Link href={country.maps.googleMaps} target='_blank'>
+      <p className='text-blue-700 text-center'>Check maps</p>
       </Link>
       </section>
   ))
@@ -26,7 +30,7 @@ async function countries (){
   
     
     return (
-      <div className='grid grid-cols-3'>{africaCard}</div>
+      <div className='grid sm:grid-cols-3 grid-cols-2 gap-5 py-11'>{africaCard}</div>
     )
   }
   
